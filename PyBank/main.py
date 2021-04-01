@@ -34,7 +34,12 @@ average_change = round((sum(ind_changes)/len(ind_changes)),2)
 print(f"Average Change: ${average_change}")
 
 # The greatest increase in profits (date and amount) over the entire period
+greatest_increase = max(ind_changes)
+index_greatest = ind_changes.index(greatest_increase)
 
+greatest_month = date_data[index_greatest+1]
+
+print(f"Greatest Increase in Profits: {greatest_month} (${greatest_increase})")
 
 # The greatest decrease in losses (date and amount) over the entire period
 
