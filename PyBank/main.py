@@ -49,6 +49,12 @@ least_month = date_data[index_least+1]
 
 print(f"Greatest Decrease in Profits: {least_month} (${greatest_decrease})")
 
+output_path = os.path.join('Analysis', 'Financial_Analysis.txt')
+output_file = open(output_path, 'w')
+
+output_file.write('Financial Analysis')
+
+
 #  Financial Analysis
 #  ----------------------------
 #  Total Months: 86
