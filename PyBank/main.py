@@ -42,7 +42,12 @@ greatest_month = date_data[index_greatest+1]
 print(f"Greatest Increase in Profits: {greatest_month} (${greatest_increase})")
 
 # The greatest decrease in losses (date and amount) over the entire period
+greatest_decrease = min(ind_changes)
+index_least = ind_changes.index(greatest_decrease)
 
+least_month = date_data[index_least+1]
+
+print(f"Greatest Decrease in Profits: {least_month} (${greatest_decrease})")
 
 #  Financial Analysis
 #  ----------------------------
