@@ -4,27 +4,40 @@ import csv
 csvpath = os.path.join('Resources', 'budget_data.csv')
 date_data = []
 financial_data = []
+profit_change = []
 
 with open(csvpath) as csvfile:
 	csvreader = csv.reader(csvfile, delimiter=',')
 	csvheader = next(csvreader)
+
+	#date_data = [row[0] for i in range(csvreader)]
+	#financial_data = [row[1] for i in range(csvreader)]
 
 	for row in csvreader:
 		date_data.append(row[0])
 		financial_data.append(int(row[1]))
 
 # The total number of months included in the dataset
-Total_Months = len(date_data)
-print(f"Total Months: {Total_Months}")
+total_months = len(date_data)
+
+print(f"Total Months: {total_months}")
 
 # Calculate the changes in "Profit/Losses" over the entire period, then find the average of those changes
 total = sum(financial_data)
-print(f"Total: {total}")
+
+print(f"Total: ${total}")
+
+ind_changes = [financial_data[i+1]-financial_data[i] for i in range(total_months-1)]
+
+average_change = round((sum(ind_changes)/len(ind_changes)),2)
+
+print(f"Average Change: ${average_change}")
 
 # The greatest increase in profits (date and amount) over the entire period
 
 
 # The greatest decrease in losses (date and amount) over the entire period
+
 
 #  Financial Analysis
 #  ----------------------------
