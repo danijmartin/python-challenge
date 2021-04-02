@@ -47,7 +47,7 @@ least_month = date_data[index_least+1]
 
 # Final Analysis
 
-months = (f"Total Months: {total_months} \n")
+months = (f"\nTotal Months: {total_months} \n")
 profit = (f"Total: ${total} \n")
 profit_change = (f"Average Change: ${average_change} \n")
 profit_increase = (f"Greatest Increase in Profits: {greatest_month} (${greatest_increase}) \n")
@@ -57,14 +57,13 @@ Lines = [months, profit, profit_change, profit_increase, profit_decrease]
 # Exporting text file containing final analysis
 
 output_path = os.path.join('Analysis', 'Financial_Analysis.txt')
-output_file = open(output_path, 'w')
 
-output_file.write('Financial Analysis \n')
-output_file.writelines(Lines)
-output_file.close()
+with open(output_path, 'w') as output_file:
+	output_file.write('Financial Analysis \n')
+	output_file.write('-'*25)
+	output_file.writelines(Lines)
 
 # Printing final analysis to terminal
 
-output_file = open(output_path, 'r')
-print(output_file.read())
-output_file.close()
+with open(output_path, 'r') as output_file:
+	print(output_file.read())
