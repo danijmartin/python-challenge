@@ -16,8 +16,12 @@ with open(csvpath) as csvfile:
 # Calculate the total number of votes cast
 
 total_votes = len(voter_id)
+print(total_votes)
 
 # Calculate a complete list of candidates who received votes
+
+unique_candidates = list(set(candidates))
+print(unique_candidates)
 
 # Calculate the percentage of votes each candidate won
 
