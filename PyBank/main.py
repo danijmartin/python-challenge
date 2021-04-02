@@ -10,9 +10,6 @@ with open(csvpath) as csvfile:
 	csvreader = csv.reader(csvfile, delimiter=',')
 	csvheader = next(csvreader)
 
-	#date_data = [row[0] for i in range(csvreader)]
-	#financial_data = [row[1] for i in range(csvreader)]
-
 	for row in csvreader:
 		date_data.append(row[0])
 		financial_data.append(int(row[1]))
