@@ -26,13 +26,17 @@ print(unique_candidates)
 # Calculate the total number of votes each candidate won
 # Calculate the percentage of votes each candidate won
 
-candidate_stats = {}
+c_stats = []
+candidates_stats = []
 
 for c in unique_candidates:
   c_count = candidates.count(c)
-  vote_percent = round((c_count/total_votes)*100,2)
-  candidate_stats[c] = (c_count, vote_percent)
-print(candidate_stats)
+  vote_percent = round((c_count/total_votes)*100,3)
+  c_stats = [c, vote_percent, c_count]
+  candidates_stats.append(c_stats)
+
+print(candidates_stats)
+
 
 
 # Calculate the winner of the election based on popular vote.
