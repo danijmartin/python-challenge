@@ -1,4 +1,5 @@
 import pandas as pd
+import re
 
 csvpath = 'Resources/employee_data.csv'
 
@@ -26,3 +27,8 @@ Birthdate = employee_df.oldDOB.str.split('-', n=2, expand=True)
 employee_df['DOB'] = Birthdate[1] + '/' + Birthdate[2] + '/' + Birthdate[0]
 employee_df.drop(columns='oldDOB', inplace=True)
 # print(employee_df.head()) - confirming progress
+
+# Truncating SSN
+
+employee_df.SSN = employee_df.SSN.apply(lambda x: re.sub(r'\d', '*', x, count=5))
+# print(employee_df.head())
