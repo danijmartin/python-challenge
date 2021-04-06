@@ -98,3 +98,11 @@ us_state_abbrev = {
 employee_df.State.replace(us_state_abbrev, inplace=True)
 # print(employee_df.head())  - confirming progress
 
+# Returning columns to original order
+
+employee_df = employee_df[['Emp ID', 'First Name', 'Last Name', 'DOB', 'SSN', 'State']]
+# print(employee_df.head())  - confirming progress
+
+# Rewriting file for future use
+
+employee_df.to_csv('Resources/clean_employee_data.csv')
